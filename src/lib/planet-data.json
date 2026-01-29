@@ -1,0 +1,100 @@
+{
+  "Sun": {
+    "radius": 8,
+    "distance": 0,
+    "mass": 100,
+    "orbitSpeed": 0
+  },
+  "Mercury": {
+    "radius": 0.8,
+    "distance": 12,
+    "mass": 0.055,
+    "orbitSpeed": 0.4
+  },
+  "Venus": {
+    "radius": 1.2,
+    "distance": 20,
+    "mass": 0.815,
+    "orbitSpeed": 0.15
+  },
+  "Earth": {
+    "radius": 2,
+    "distance": 25,
+    "mass": 1,
+    "orbitSpeed": 0.1,
+    "satellites": {
+      "Moon": {
+        "radius": 0.5,
+        "distance": 2.5,
+        "mass": 0.012,
+        "orbitSpeed": 0.5
+      }
+    }
+  },
+  "Mars": {
+    "radius": 1.5,
+    "distance": 35,
+    "mass": 0.107,
+    "orbitSpeed": 0.08,
+    "satellites": {
+      "Phobos": {
+        "radius": 0.2,
+        "distance": 2,
+        "mass": 0.00001,
+        "orbitSpeed": 0.7
+      },
+      "Deimos": {
+        "radius": 0.15,
+        "distance": 3,
+        "mass": 0.00001,
+        "orbitSpeed": 0.4
+      }
+    }
+  },
+  "Jupiter": {
+    "radius": 3,
+    "distance": 50,
+    "mass": 317,
+    "orbitSpeed": 0.05,
+    "satellites": {
+      "Io": {
+        "radius": 0.5,
+        "distance": 6,
+        "mass": 0.015,
+        "orbitSpeed": 0.5
+      },
+      "Europa": {
+        "radius": 0.45,
+        "distance": 8,
+        "mass": 0.008,
+        "orbitSpeed": 0.3
+      }
+    }
+  },
+  "Saturn": {
+    "radius": 2.5,
+    "distance": 70,
+    "mass": 95,
+    "orbitSpeed": 0.04,
+    "satellites": {
+      "Titan": {
+        "radius": 0.8,
+        "distance": 7,
+        "mass": 0.022,
+        "orbitSpeed": 0.2
+      }
+    }
+  },
+  "Uranus": {
+    "radius": 2,
+    "distance": 90,
+    "mass": 14,
+    "orbitSpeed": 0.03
+  },
+  "Neptune": {
+    "radius": 2,
+    "distance": 110,
+    "mass": 17,
+    "orbitSpeed": 0.02
+  }
+}
