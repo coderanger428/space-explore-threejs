@@ -3,12 +3,14 @@ import Sun from "./Sun";
 import Planet from "./Planet";
 import PlanetDataJSON from "./planet-data.json";
 import type CelestialBody from "./CelestialBody";
+import Hubble from "./Hubble";
 
 interface PlanetType {
   radius: number;
   mass: number;
   distance: number;
   orbitSpeed: number;
+  autoRotate: number;
   satellites?: Record<string, PlanetType>;
 }
 interface PlanetDictionary {
@@ -22,7 +24,7 @@ export default class Solar {
   camera: THREE.PerspectiveCamera;
   renderer: THREE.WebGLRenderer;
   clock: THREE.Clock;
-
+  observer: Hubble;
   sun!: Sun;
   planets: Planet[] = [];
 
@@ -42,8 +44,8 @@ export default class Solar {
       10000,
     );
 
-    this.camera.position.set(30, 30, 30);
-    this.camera.lookAt(0, 0, 0);
+    // this.camera.position.set(30, 30, 30);
+    // this.camera.lookAt(0, 0, 0);
 
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setSize(container.clientWidth, container.clientHeight);
@@ -55,11 +57,22 @@ export default class Solar {
     this.initSolarSystem();
     this.initResize(container);
 
+    const earth = this.planets.find((p) => p.name === "Earth") ?? this.sun;
+    this.observer = new Hubble(
+      earth,
+      earth.radius + 2,
+      container.clientWidth,
+      0.1,
+      60,
+      container.clientWidth / container.clientHeight,
+      0.1,
+      10000,
+    );
     this.loop();
   }
 
   initLights() {
-    const ambient = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambient = new THREE.AmbientLight(0x444444, 0.5);
     const dir = new THREE.DirectionalLight(0xffffff, 2);
     dir.position.set(10, 10, 10);
 
@@ -86,6 +99,7 @@ export default class Solar {
         data.mass,
         data.distance,
         data.orbitSpeed || 0.01, // default if not defined
+        data.autoRotate,
         new THREE.TextureLoader().load(`textures/2k_${name.toLowerCase()}.jpg`),
         parent,
       );
@@ -136,10 +150,11 @@ export default class Solar {
     for (const p of this.planets) {
       p.update(delta);
     }
+    this.observer.update(delta);
   }
 
   render() {
-    this.renderer.render(this.scene, this.camera);
+    this.renderer.render(this.scene, this.observer.camera);
   }
 
   initResize(container: HTMLElement) {

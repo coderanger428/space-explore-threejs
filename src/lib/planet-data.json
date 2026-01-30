@@ -3,31 +3,36 @@
     "radius": 8,
     "distance": 0,
     "mass": 100,
-    "orbitSpeed": 0
+    "orbitSpeed": 0,
+    "autoRotate": 0.0001
   },
   "Mercury": {
     "radius": 0.8,
     "distance": 12,
     "mass": 0.055,
-    "orbitSpeed": 0.4
+    "orbitSpeed": 0.4,
+    "autoRotate": 0.1
   },
   "Venus": {
     "radius": 1.2,
     "distance": 20,
     "mass": 0.815,
-    "orbitSpeed": 0.15
+    "orbitSpeed": 0.15,
+    "autoRotate": 0.2
   },
   "Earth": {
     "radius": 2,
     "distance": 25,
     "mass": 1,
     "orbitSpeed": 0.1,
+    "autoRotate": 0.15,
     "satellites": {
       "Moon": {
         "radius": 0.5,
         "distance": 2.5,
         "mass": 0.012,
-        "orbitSpeed": 0.5
+        "orbitSpeed": 0.5,
+        "autoRotate": 0.2
       }
     }
   },
@@ -36,18 +41,21 @@
     "distance": 35,
     "mass": 0.107,
     "orbitSpeed": 0.08,
+    "autoRotate": 0.05,
     "satellites": {
       "Phobos": {
         "radius": 0.2,
         "distance": 2,
         "mass": 0.00001,
-        "orbitSpeed": 0.7
+        "orbitSpeed": 0.7,
+        "autoRotate": 0.1
       },
       "Deimos": {
         "radius": 0.15,
         "distance": 3,
         "mass": 0.00001,
-        "orbitSpeed": 0.4
+        "orbitSpeed": 0.4,
+        "autoRotate": 0.1
       }
     }
   },
@@ -56,18 +64,21 @@
     "distance": 50,
     "mass": 317,
     "orbitSpeed": 0.05,
+    "autoRotate": 0.1,
     "satellites": {
       "Io": {
         "radius": 0.5,
         "distance": 6,
         "mass": 0.015,
-        "orbitSpeed": 0.5
+        "orbitSpeed": 0.5,
+        "autoRotate": 0.2
       },
       "Europa": {
         "radius": 0.45,
         "distance": 8,
         "mass": 0.008,
-        "orbitSpeed": 0.3
+        "orbitSpeed": 0.3,
+        "autoRotate": 0.2
       }
     }
   },
@@ -76,12 +87,14 @@
     "distance": 70,
     "mass": 95,
     "orbitSpeed": 0.04,
+    "autoRotate": 0.2,
     "satellites": {
       "Titan": {
         "radius": 0.8,
         "distance": 7,
         "mass": 0.022,
-        "orbitSpeed": 0.2
+        "orbitSpeed": 0.2,
+        "autoRotate": 0.3
       }
     }
   },
@@ -89,12 +102,14 @@
     "radius": 2,
     "distance": 90,
     "mass": 14,
-    "orbitSpeed": 0.03
+    "orbitSpeed": 0.03,
+    "autoRotate": 0.05
   },
   "Neptune": {
     "radius": 2,
     "distance": 110,
     "mass": 17,
-    "orbitSpeed": 0.02
+    "orbitSpeed": 0.02,
+    "autoRotate": 0.3
   }
 }
